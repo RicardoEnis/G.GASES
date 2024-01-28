@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova análise</title>
+    <link rel="stylesheet" href="./style-new-ana.css"> <!-- css relativo = style-new-ana.css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Titillium+Web:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+</head>
+
+<body>
+    <form id="new-ana" name="new-ana" action="analisys.html"> <!-- a action aqui está ficticia. foi feita para apenas jogar o usuário para o link
+    não há envios de dados. não precisa fazer por agora-->
+        <Fieldset>
+            <div class="fieldset-wrapper">
+                <legend>
+                    Inserir nova análise
+                </legend>
+                <div class="input-wrapper"> <!-- input que exige número -->
+                    <label for="client-id">Identificador do Cliente <span>(Apenas números)</span></label>
+                    <input name="client-id" type="text" id="client-id" pattern="[0-9]+$" title="Utilize apenas números"
+                        required>
+                </div>
+                <div class="input-wrapper">  <!-- input que exige número -->
+                    <label for="client-id">Digite o ciclo do cliente <span>(Apenas números, não necessita por semanas,
+                            um "s" ou qualquer Identificador alfabético)</span></label>
+                    <input name="client-id" type="text" id="client-id" pattern="[0-9]+$" title="Utilize apenas números"
+                        required>
+                </div>
+                <div class="input-wrapper">  <!-- input que não exige número (usado para textos pequenos) -->
+                    <label for="client-id">Digite o ciclo do cliente <span>(Apenas números, não necessita por semanas,
+                            um "s" ou qualquer Identificador alfabético)</span></label>
+                    <input name="client-id" type="text" id="client-id">
+                </div>
+                <div class="check-wrapper" id="check-3"> <!-- checkbox com apenas 3 confirmações-->
+                    <p>check box tricondicional</p>
+                    <input type="checkbox" id="check-privacy">
+                    <label for="check-privacy"> uma condiçao</label>
+                    <input type="checkbox" id="check-outra-coisa">
+                    <label for="check-outra-coisa"> outra condição</label>
+                    <input type="checkbox" id="check-terceira-coisa">
+                    <label for="check-terceira-coisa"> terceira condiçao</label>
+                </div>
+                <div class="check-wrapper">  <!-- checkbox com apenas uma confirmação-->
+                    <input type="checkbox" id="check-privacy">
+                    <label for="check-privacy"> Cilindro danificado?</label>
+                </div>
+
+                <div class="input-wrapper"> <!-- text area(usado apenas para quando é esperado que usuario ponha grandes textos)-->
+                    <label for="event-info">Detalhes da análise</label>
+                    <textarea name="complaint" id="event-info"> </textarea>
+                </div>
+                
+                        <div class="select-wrapper"> <!--input usado para dar opçao de seleção-->
+                            <label for="select-time">Selecione o prazo:</label>
+                            <select id="select-time" name="select-time">
+                                <option value="48h">48h</option>
+                                <option value="24h">24h</option>
+                            </select>
+                </div>
+
+           
+                </div>
+            </div>
+        </Fieldset>
+        <Fieldset>
+            <div class="fieldset-wrapper">
+                <legend>
+                    Data e Hora
+                </legend>
+                <div class="t-col">
+                    <div class="input-wrapper">
+                        <label for="day"> Data de início</label>
+                        <input name="initial-ana-day" type="date" id="day" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="event-begin"> Hora de início </label>
+                        <input name="initial-ana-time" type="time" id="event-begin" required>
+                    </div>
+                </div>
+
+            </div>
+        </Fieldset>
+
+        <input form="new-ana" class="button" type="submit" value="Salvar" name="form-new-ana">
+
+    </form>
+    <script>
+        document.getElementById("new-ana").addEventListener("submit", function () {
+            window.location.href = "analisys.html";
+        });
+    </script>
+</body>
+
+</html>
